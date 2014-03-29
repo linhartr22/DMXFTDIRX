@@ -1,0 +1,278 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Index 0 = DMXLEDRedAIndex Value = 0 (full off) to 255 (full on) -->
+<!-- Index 1 = DMXLEDGrnAIndex Value = 0 (full off) to 255 (full on) -->
+<!-- Index 2 = DMXLEDBluAIndex Value = 0 (full off) to 255 (full on) -->
+<!-- Index 3 = DMXLEDRedBIndex Value = 0 (full off) to 255 (full on) -->
+<!-- Index 4 = DMXLEDGrnBIndex Value = 0 (full off) to 255 (full on) -->
+<!-- Index 5 = DMXLEDBluBIndex Value = 0 (full off) to 255 (full on) -->
+<!-- Index 6 = DMXRAIndex Value = 0 (off), 1 (on) -->
+
+<DMX_CONTROL version="2.00">
+
+  <!-- ********************************************************************************************* -->
+  <event type="NORMAL_CONDITION_1" continuous="yes">
+
+    <!-- Red Alert indicator off -->
+    <setvalue index="6" value "0" change="0"/>
+    <!-- steady soft white light -->
+    <timeblock mseconds="1000">
+      <setvalue index="0" value="100" change="0"/>
+      <!-- red   value of first light box -->
+      <setvalue index="1" value="100" change="0"/>
+      <!-- green value of first light box -->
+      <setvalue index="2" value="100" change="0"/>
+      <!-- blue  value of first light box -->
+    </timeblock>
+  </event>
+
+  <!-- ********************************************************************************************* -->
+  <event type="PLAYER_SHIELDS_ON" continuous="yes">
+
+    <!-- steady blue light -->
+    <timeblock mseconds="1000">
+      <setvalue index="0" value="0" change="0"/>
+      <!-- red   value of first light box -->
+      <setvalue index="1" value="0" change="0"/>
+      <!-- green value of first light box -->
+      <setvalue index="2" value="200" change="0"/>
+      <!-- blue  value of first light box -->
+    </timeblock>
+  </event>
+
+
+  <!-- ********************************************************************************************* -->
+  <event type="TRACTORED_FOR_DOCKED" continuous="yes">
+
+    <!-- steady yellow light -->
+    <timeblock mseconds="1000">
+      <setvalue index="0" value="200" change="0"/>
+      <!-- red   value of first light box -->
+      <setvalue index="1" value="200" change="0"/>
+      <!-- green value of first light box -->
+      <setvalue index="2" value="0" change="0"/>
+      <!-- blue  value of first light box -->
+    </timeblock>
+  </event>
+
+  <!-- ********************************************************************************************* -->
+  <event type="COMPLETELY_DOCKED" continuous="yes">
+
+    <!-- steady green light -->
+    <timeblock mseconds="1000">
+      <setvalue index="0" value="0" change="0"/>
+      <!-- red   value of first light box -->
+      <setvalue index="1" value="200" change="0"/>
+      <!-- green value of first light box -->
+      <setvalue index="2" value="0" change="0"/>
+      <!-- blue  value of first light box -->
+    </timeblock>
+  </event>
+
+  <!-- ********************************************************************************************* -->
+  <event type="RED_ALERT" continuous="yes">
+
+    <!-- turn Red Alert lights on -->
+    <setvalue index="6" value="1" change="0"/>
+    <timeblock mseconds="2000">
+      <setvalue index="0" value="200" change="-90"/>
+      <!-- red   value of first light box -->
+      <setvalue index="1" value="0" change="0"/>
+      <!-- green value of first light box -->
+      <setvalue index="2" value="0" change="0"/>
+      <!-- blue  value of first light box -->
+    </timeblock>
+    <timeblock mseconds="2000">
+      <setvalue index="0" value="0" change="30"/>
+      <!-- red   value of first light box -->
+      <setvalue index="1" value="0" change="0"/>
+      <!-- green value of first light box -->
+      <setvalue index="2" value="0" change="0"/>
+      <!-- blue  value of first light box -->
+    </timeblock>
+  </event>
+
+  <!-- ********************************************************************************************* -->
+  <event type="SHIP_DAMAGE_20" continuous="yes">
+    <!-- flicker the light of the first light box -->
+    <timeblock mseconds="60">
+      <setvalue index="0" value="0" change="0"/>      <!-- red   value of first light box -->
+      <setvalue index="1" value="0" change="0"/>      <!-- green value of first light box -->
+      <setvalue index="2" value="0" change="0"/>      <!-- blue  value of first light box -->
+    </timeblock>
+    <timeblock mseconds="600">
+    </timeblock>
+    <timeblock mseconds="81">
+      <setvalue index="0" value="0" change="0"/>      <!-- red   value of first light box -->
+      <setvalue index="1" value="0" change="0"/>      <!-- green value of first light box -->
+      <setvalue index="2" value="0" change="0"/>      <!-- blue  value of first light box -->
+    </timeblock>
+    <timeblock mseconds="450">
+    </timeblock>
+    <timeblock mseconds="81">
+      <setvalue index="0" value="0" change="0"/>      <!-- red   value of first light box -->
+      <setvalue index="1" value="0" change="0"/>      <!-- green value of first light box -->
+      <setvalue index="2" value="0" change="0"/>      <!-- blue  value of first light box -->
+    </timeblock>
+    <timeblock mseconds="4501">
+    </timeblock>
+
+  </event>
+
+
+  <!-- ********************************************************************************************* -->
+  <event type="SHIP_DAMAGE_40" continuous="yes">
+    <!-- flicker the light of the first light box -->
+    <timeblock mseconds="60">
+      <setvalue index="0" value="0" change="0"/>      <!-- red   value of first light box -->
+      <setvalue index="1" value="0" change="0"/>      <!-- green value of first light box -->
+      <setvalue index="2" value="0" change="0"/>      <!-- blue  value of first light box -->
+    </timeblock>
+    <timeblock mseconds="200">
+    </timeblock>
+    <timeblock mseconds="81">
+      <setvalue index="0" value="0" change="0"/>      <!-- red   value of first light box -->
+      <setvalue index="1" value="0" change="0"/>      <!-- green value of first light box -->
+      <setvalue index="2" value="0" change="0"/>      <!-- blue  value of first light box -->
+    </timeblock>
+    <timeblock mseconds="550">
+    </timeblock>
+    <timeblock mseconds="81">
+      <setvalue index="0" value="0" change="0"/>      <!-- red   value of first light box -->
+      <setvalue index="1" value="0" change="0"/>      <!-- green value of first light box -->
+      <setvalue index="2" value="0" change="0"/>      <!-- blue  value of first light box -->
+    </timeblock>
+    <timeblock mseconds="4501">
+    </timeblock>
+
+  </event>
+
+
+  <!-- ********************************************************************************************* -->
+  <event type="SHIP_DAMAGE_60" continuous="yes">
+    <!-- flicker the light of the first light box -->
+    <timeblock mseconds="60">
+      <setvalue index="0" value="0" change="0"/>      <!-- red   value of first light box -->
+      <setvalue index="1" value="0" change="0"/>      <!-- green value of first light box -->
+      <setvalue index="2" value="0" change="0"/>      <!-- blue  value of first light box -->
+    </timeblock>
+    <timeblock mseconds="733">
+    </timeblock>
+    <timeblock mseconds="81">
+      <setvalue index="0" value="0" change="0"/>      <!-- red   value of first light box -->
+      <setvalue index="1" value="0" change="0"/>      <!-- green value of first light box -->
+      <setvalue index="2" value="0" change="0"/>      <!-- blue  value of first light box -->
+    </timeblock>
+    <timeblock mseconds="1450">
+    </timeblock>
+    <timeblock mseconds="81">
+      <setvalue index="0" value="0" change="0"/>      <!-- red   value of first light box -->
+      <setvalue index="1" value="0" change="0"/>      <!-- green value of first light box -->
+      <setvalue index="2" value="0" change="0"/>      <!-- blue  value of first light box -->
+    </timeblock>
+    <timeblock mseconds="1001">
+    </timeblock>
+
+  </event>
+
+  <!-- ********************************************************************************************* -->
+  <event type="SOMETHING_HITS_PLAYER">
+
+    <!-- flicker the light of the first light box -->
+    <timeblock mseconds="60">
+      <setvalue index="0" value="0" change="0"/>      <!-- red   value of first light box -->
+      <setvalue index="1" value="0" change="0"/>      <!-- green value of first light box -->
+      <setvalue index="2" value="0" change="0"/>      <!-- blue  value of first light box -->
+    </timeblock>
+    <timeblock mseconds="60">
+      <setvalue index="0" value="255" change="0"/>      <!-- red   value of first light box -->
+      <setvalue index="1" value="255" change="0"/>      <!-- green value of first light box -->
+      <setvalue index="2" value="255" change="0"/>      <!-- blue  value of first light box -->
+    </timeblock>
+    <timeblock mseconds="60">
+      <setvalue index="0" value="0" change="0"/>      <!-- red   value of first light box -->
+      <setvalue index="1" value="0" change="0"/>      <!-- green value of first light box -->
+      <setvalue index="2" value="0" change="0"/>      <!-- blue  value of first light box -->
+    </timeblock>
+    <timeblock mseconds="60">
+      <setvalue index="0" value="255" change="0"/>      <!-- red   value of first light box -->
+      <setvalue index="1" value="255" change="0"/>     <!-- green value of first light box -->
+      <setvalue index="2" value="255" change="0"/>      <!-- blue  value of first light box -->
+    </timeblock>
+    <timeblock mseconds="60">
+      <setvalue index="0" value="0" change="0"/>      <!-- red   value of first light box -->
+      <setvalue index="1" value="0" change="0"/>      <!-- green value of first light box -->
+      <setvalue index="2" value="0" change="0"/>      <!-- blue  value of first light box -->
+    </timeblock>
+    <timeblock mseconds="60">
+      <setvalue index="0" value="255" change="0"/>      <!-- red   value of first light box -->
+      <setvalue index="1" value="255" change="0"/>      <!-- green value of first light box -->
+      <setvalue index="2" value="255" change="0"/>      <!-- blue  value of first light box -->
+    </timeblock>
+    <timeblock mseconds="60">
+      <setvalue index="0" value="0" change="0"/>      <!-- red   value of first light box -->
+      <setvalue index="1" value="0" change="0"/>      <!-- green value of first light box -->
+      <setvalue index="2" value="0" change="0"/>      <!-- blue  value of first light box -->
+    </timeblock>
+  </event>
+
+  <!-- ********************************************************************************************* -->
+  <!-- ALL event tags that are generated by the game (many of them are not used in this script)
+
+
+PLAYER_SHIELDS_RAISED
+PLAYER_SHIELDS_ON
+PLAYER_SHIELDS_LOWERED
+PLAYER_SHIELDS_ON
+RED_ALERT
+JUST_KILLED_DAMCON_MEMBER
+SELF_DESTRUCTED
+SHIP_DAMAGE_20
+SHIP_DAMAGE_40
+SHIP_DAMAGE_60
+COMPLETELY_DOCKED
+TRACTORED_FOR_DOCKED
+COMPLETELY_DOCKED
+JUMP_INITIATED
+JUMP_EXECUTED
+JUMP_FIZZLED
+FRONT_SHIELD_LOW
+REAR_SHIELD_LOW
+ENTERING_NEBULA
+WITHIN_NEBULA
+EXITING_NEBULA
+START_DOCKING
+TRACTORED_FOR_DOCKED
+HELM_IN_REVERSE
+
+SOMETHING_HITS_PLAYER
+NPC_BEAM_HITS_PLAYER
+PLAYER_BEAM_HITS_PLAYER
+TORPEDO_HITS_PLAYER
+MINE_HITS_PLAYER
+LIGHTNING_HITS_PLAYER
+COLLISION_HITS_PLAYER
+DRONE_HITS_PLAYER
+PLAYER_TAKES_INTERNAL_DAMAGE
+PLAYER_TAKES_SHIELD_DAMAGE
+PLAYER_TAKES_FRONT_SHIELD_DAMAGE
+PLAYER_TAKES_REAR_SHIELD_DAMAGE
+DAMCON_CASUALTY
+SHIP_DAMAGE_20
+SHIP_DAMAGE_40
+SHIP_DAMAGE_60
+PLAYER_DESTROYED
+GAME_OVER
+
+ENERGY_LOW
+ENERGY_20
+ENERGY_40
+ENERGY_60
+ENERGY_80
+ENERGY_100
+ENERGY_200
+  
+  -->
+  <!-- ********************************************************************************************* -->
+
+
+</DMX_CONTROL>
