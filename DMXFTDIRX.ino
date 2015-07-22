@@ -17,9 +17,9 @@
 const int DMXLEDRedAIndex = 0 + 1;
 const int DMXLEDGrnAIndex = 1 + 1;
 const int DMXLEDBluAIndex = 2 + 1;
-const int DMXLEDRedBIndex = 3 + 1;
-const int DMXLEDGrnBIndex = 4 + 1;
-const int DMXLEDBluBIndex = 5 + 1;
+//const int DMXLEDRedBIndex = 3 + 1;
+//const int DMXLEDGrnBIndex = 4 + 1;
+//const int DMXLEDBluBIndex = 5 + 1;
 const int DMXRAIndex = 6 + 1;
  
 // Common Anode RGB LED Output Pins
@@ -49,19 +49,17 @@ boolean RABeacon = false;
 void setup () {
   // Init DMX Serial
   DMXSerial.init(DMXReceiver);
-
-/* 
+ 
   // Init DMX LED
   DMXSerial.write(DMXLEDRedAIndex, LEDRedDefPWM);
   DMXSerial.write(DMXLEDGrnAIndex, LEDGrnDefPWM);
   DMXSerial.write(DMXLEDBluAIndex, LEDBluDefPWM);
-  DMXSerial.write(DMXLEDRedBIndex, LEDRedDefPWM);
-  DMXSerial.write(DMXLEDGrnBIndex, LEDGrnDefPWM);
-  DMXSerial.write(DMXLEDBluBIndex, LEDBluDefPWM);
+  //DMXSerial.write(DMXLEDRedBIndex, LEDRedDefPWM);
+  //DMXSerial.write(DMXLEDGrnBIndex, LEDGrnDefPWM);
+  //DMXSerial.write(DMXLEDBluBIndex, LEDBluDefPWM);
   
   // Init DMX Red Alert Beacon
   DMXSerial.write(DMXRAIndex, int(RABeacon));
- */
 
   // Enable LED Output Pins
   pinMode(LEDRedAPin, OUTPUT);
@@ -73,7 +71,7 @@ void setup () {
   
   // Enable Red Alert Beacon Output Pin
   pinMode(RABeaconPin, OUTPUT);
-  
+/*  
   // Test
   for (byte x = 0; x < 4; x++) {
     // Toggle Red Alert Beacon
@@ -126,6 +124,7 @@ void setup () {
   // Red Alert Beacon Off
   RABeacon = false;
   digitalWrite(RABeaconPin, !RABeacon);
+  */
 }
  
 // Runs continuously after setup()
@@ -139,9 +138,9 @@ void loop() {
     LEDRedAPWM = DMXSerial.read(DMXLEDRedAIndex);
     LEDGrnAPWM = DMXSerial.read(DMXLEDGrnAIndex);
     LEDBluAPWM = DMXSerial.read(DMXLEDBluAIndex);
-    LEDRedBPWM = DMXSerial.read(DMXLEDRedBIndex);
-    LEDGrnBPWM = DMXSerial.read(DMXLEDGrnBIndex);
-    LEDBluBPWM = DMXSerial.read(DMXLEDBluBIndex);
+    LEDRedBPWM = LEDRedAPWM;
+    LEDGrnBPWM = LEDGrnAPWM;
+    LEDBluBPWM = LEDBluBPWM;
     RABeacon = boolean(DMXSerial.read(DMXRAIndex));
   }
   else {
